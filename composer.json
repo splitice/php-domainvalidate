@@ -1,13 +1,12 @@
 {
 	"keywords" : [
-		"lua","serialization"
 	],
 	"autoload" : {
 		"psr-0" : {
 			"Splitice" : "src"
 		}
 	},
-	"name" : "splitice/php-lua-serialize",
+	"name" : "splitice/php-domainvalidate",
 	"type" : "library",
 	"license" : "MIT",
 	"require" : {
