@@ -17,13 +17,13 @@ class DomainValidator
 		if (count($output) > 2)
 			return true;
 
-		$cmd = sprintf('dig %s NS', escapeshellarg($domain_name), escapeshellarg($domain_name));
+		$cmd = sprintf('dig %s NS', escapeshellarg($domain_name));
 		$output = array();
 		exec($cmd, $output);
 		foreach ($output as $v) {
 			if (strlen($v) == 0)
 				continue;
-			if ($v{0} == ';' && strpos($v, 'status: NOERROR')) {
+			if ($v[0] == ';' && strpos($v, 'status: NOERROR')) {
 				return true;
 			}
 		}
@@ -35,7 +35,7 @@ class DomainValidator
 		foreach ($output as $k => $v) {
 			if (strlen($v) == 0)
 				continue;
-			if ($v{0} == ';')
+			if ($v[0] == ';')
 				unset($output[$k]);
 		}
 
